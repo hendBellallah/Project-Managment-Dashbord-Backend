@@ -3,16 +3,17 @@ const express = require('express')
 const app = express();
 app.use(express.json())
 
-const posts = require('./routes/api/posts-api')
-const users = require('./routes/api/users-api')
 const auth = require('./routes/api/auth-api')
+const listes = require('./routes/api/listes-api')
+const projects = require('./routes/api/projects-api')
+const tasks = require('./routes/api/tasks-api')
+const users = require('./routes/api/users-api')
 
-app.use('/api/posts',posts)
-app.use('/api/users',users)
 app.use('/api/auth',auth)
-app.use('/api/posts',posts)
+app.use('/api/listes',listes)
+app.use('/api/projects',projects)
+app.use('/api/tasks',tasks)
 app.use('/api/users',users)
-app.use('/api/auth',auth)
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))

@@ -1,0 +1,4 @@
+{
+  "jwtSecret" : "PMD",
+  "tokenExpire": "2592000" 
+}
